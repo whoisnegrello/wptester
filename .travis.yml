@@ -39,7 +39,7 @@ matrix:
       env: WP_TRAVISCI=phpcs
 
 before_script:
-  - export $COMPOSER_BIN_DIR=composer config bin-dir
+  - composer config bin-dir
   - echo $COMPOSER_BIN_DIR
   - export PATH="$HOME/$COMPOSER_BIN_DIR:$PATH"
   - echo $PATH
