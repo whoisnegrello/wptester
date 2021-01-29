@@ -39,7 +39,10 @@ matrix:
       env: WP_TRAVISCI=phpcs
 
 before_script:
+  - echo $PATH
+  - echo $HOME
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - echo $PATH
   - composer global require squizlabs/php_codesniffer
   - |
     if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
