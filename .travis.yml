@@ -22,8 +22,8 @@ matrix:
       env: WP_VERSION=latest
     - php: 7.3
       env: WP_VERSION=latest
-    # - php: 7.2
-    #   env: WP_VERSION=latest
+    - php: 7.2
+      env: WP_VERSION=latest
     # - php: 7.1
     #   env: WP_VERSION=latest
     # - php: 7.0
@@ -40,7 +40,7 @@ matrix:
 
 before_script:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer global require "squizlabs/php_codesniffer=*"
+  - composer global require squizlabs/php_codesniffer
   - |
     if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
       phpenv config-rm xdebug.ini
