@@ -18,12 +18,12 @@ cache:
 
 matrix:
   include:
-    - php: 7.4
-      env: WP_VERSION=latest
-    - php: 7.3
-      env: WP_VERSION=latest
-    - php: 7.2
-      env: WP_VERSION=latest WP_TRAVISCI=phpcs
+    # - php: 7.4
+    #   env: WP_VERSION=latest
+    # - php: 7.3
+    #   env: WP_VERSION=latest
+    # - php: 7.2
+    #   env: WP_VERSION=latest # WP_TRAVISCI=phpcs
     # - php: 7.1
     #   env: WP_VERSION=latest
     # - php: 7.0
@@ -39,10 +39,8 @@ matrix:
       env: WP_TRAVISCI=phpcs
 
 before_script:
-  - echo $PATH
-  - echo $HOME
+  - echo $COMPOSER_HOME
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - echo $PATH
   - composer global require squizlabs/php_codesniffer
   - |
     if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
