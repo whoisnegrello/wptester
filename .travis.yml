@@ -39,7 +39,7 @@ matrix:
       env: WP_TRAVISCI=phpcs
 
 before_script:
-  - export $COMPOSER_BIN_DIR = composer config bin-dir
+  - export $COMPOSER_BIN_DIR=composer config bin-dir
   - echo $COMPOSER_BIN_DIR
   - export PATH="$HOME/$COMPOSER_BIN_DIR:$PATH"
   - echo $PATH
@@ -61,9 +61,7 @@ before_script:
       composer global require phpcompatibility/php-compatibility
       composer global require phpcompatibility/phpcompatibility-paragonie
       composer global require phpcompatibility/phpcompatibility-wp
-      ls $HOME/.composer/vendor/bin/
-      ls $HOME/.composer/vendor/bin/phpcs
-      $HOME/.composer/vendor/bin/phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs,$HOME/.composer/vendor/phpcompatibility/php-compatibility,$HOME/.composer/vendor/phpcompatibility/phpcompatibility-paragonie,$HOME/.composer/vendor/phpcompatibility/phpcompatibility-wp
+      phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs,$HOME/.composer/vendor/phpcompatibility/php-compatibility,$HOME/.composer/vendor/phpcompatibility/phpcompatibility-paragonie,$HOME/.composer/vendor/phpcompatibility/phpcompatibility-wp
     fi
 
 script:
